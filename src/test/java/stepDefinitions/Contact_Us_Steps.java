@@ -17,7 +17,7 @@ import org.testng.Assert;
 
 public class Contact_Us_Steps {
     private WebDriver driver;
-    @Before
+    @Before("@contact-us")
     public void setup (){
         System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/src/main/java/divers/chromedriver.exe");
         ChromeOptions chromeOptions = new ChromeOptions();
@@ -26,7 +26,7 @@ public class Contact_Us_Steps {
         driver = new ChromeDriver(chromeOptions);
         driver.manage().window().maximize();
     }
-    @After
+    @After("@contact-us")
     public void teardown(){
         driver.quit();
     }
