@@ -49,4 +49,10 @@ public class Login {
         String Login_message = driver.switchTo().alert().getText();
         Assert.assertEquals(Login_message, "validation succeeded");
     }
+
+    @Then("I should be Unsuccessful logged in message")
+    public void i_should_be_unsuccessful_logged_in_message() {
+        String Login_message = driver.switchTo().alert().getText();
+        Assert.assertEquals(Login_message, "validation failed");
+    }
 }

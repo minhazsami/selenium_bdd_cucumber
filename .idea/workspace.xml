@@ -125,6 +125,26 @@
         <option name="MakeProject" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Scenario: Validate Unsuccessful Login - Specific Data" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="5" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/Login.feature" />
+      <option name="GLUE" value="stepDefinitions" />
+      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
+      <module name="automation-framework" />
+      <option name="NAME_FILTER" value="^Validate Unsuccessful Login \- Specific Data$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Validate Unsuccessful Login \- Specific Data$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: Validate Unsuccessful Login - Specific Data" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.cucumber.core.cli.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="MainRunner" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="automation-framework" />
       <extension name="coverage">
@@ -145,6 +165,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="TestNG.MainRunner" />
+        <item itemvalue="Cucumber Java.Scenario: Validate Unsuccessful Login - Specific Data" />
         <item itemvalue="Cucumber Java.Scenario: Validate Successful Login - Specific Data" />
         <item itemvalue="Cucumber Java.Scenario: Validate Successful Submission - Specific Data" />
         <item itemvalue="Cucumber Java.Scenario: Validate Successful Submission - Unique Data" />
