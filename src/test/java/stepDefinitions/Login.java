@@ -6,10 +6,12 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.openqa.selenium.By;
 import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.testng.Assert;
 
 public class Login {
     private WebDriver driver;
@@ -28,26 +30,23 @@ public class Login {
     }
     @Given("I have to access the login page")
     public void i_have_to_access_the_login_page() {
-
-        System.out.println("Test 1");
+        driver.get("https://www.webdriveruniversity.com/Login-Portal/index.html?");
     }
     @When("I enter a specific username {string}")
     public void i_enter_a_specific_username(String username) {
-        System.out.println(username);
+        driver.findElement(By.id("text")).sendKeys(username);
     }
-    @And("I enter a correct password {string}")
+    @And("I enter a correct password {}")
     public void i_enter_a_correct_password(String password) {
-
-        System.out.println(password);
+        driver.findElement(By.id("password")).sendKeys(password);
     }
     @And("I click on the login CTA")
     public void i_click_on_the_login_cta() {
-
-        System.out.println("Test 4");
+        driver.findElement(By.id("login-button")).click();
     }
     @Then("I should be successful logged in message")
     public void i_should_be_successful_logged_in_message() {
-
-        System.out.println("Test 5");
+        String Login_message = driver.switchTo().alert().getText();
+        Assert.assertEquals(Login_message, "validation succeeded");
     }
 }
