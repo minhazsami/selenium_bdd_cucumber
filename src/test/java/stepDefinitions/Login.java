@@ -1,16 +1,10 @@
 package stepDefinitions;
 
-import io.cucumber.java.After;
-import io.cucumber.java.Before;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
-import org.openqa.selenium.PageLoadStrategy;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.Assert;
 
 public class Login {
@@ -18,7 +12,6 @@ public class Login {
     public void i_have_to_access_the_login_page() {
         driver.get("https://www.webdriveruniversity.com/Login-Portal/index.html?");
     }
-
     @When("I enter a specific username {string}")
     public void i_enter_a_specific_username(String username) {
         driver.findElement(By.id("text")).sendKeys(username);
