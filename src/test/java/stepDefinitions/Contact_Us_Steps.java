@@ -16,20 +16,6 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.Assert;
 
 public class Contact_Us_Steps {
-    private WebDriver driver;
-    @Before("@contact-us")
-    public void setup (){
-        System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/src/main/java/divers/chromedriver.exe");
-        ChromeOptions chromeOptions = new ChromeOptions();
-        chromeOptions.addArguments("--remote-allow-origins=*");
-        chromeOptions.setPageLoadStrategy(PageLoadStrategy.NORMAL);
-        driver = new ChromeDriver(chromeOptions);
-        driver.manage().window().maximize();
-    }
-    @After("@contact-us")
-    public void teardown(){
-        driver.quit();
-    }
     public String generateRandomNUmber(int length){
         return RandomStringUtils.randomNumeric(length);
     }

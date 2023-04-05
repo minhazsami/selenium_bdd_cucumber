@@ -14,23 +14,6 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.Assert;
 
 public class Login {
-    private WebDriver driver;
-
-    @Before("@login")
-    public void setup() {
-        System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/src/main/java/divers/chromedriver.exe");
-        ChromeOptions chromeOptions = new ChromeOptions();
-        chromeOptions.addArguments("--remote-allow-origins=*");
-        chromeOptions.setPageLoadStrategy(PageLoadStrategy.NORMAL);
-        driver = new ChromeDriver(chromeOptions);
-        driver.manage().window().maximize();
-    }
-
-    @After("@login")
-    public void teardown() {
-        driver.quit();
-    }
-
     @Given("I have to access the login page")
     public void i_have_to_access_the_login_page() {
         driver.get("https://www.webdriveruniversity.com/Login-Portal/index.html?");
