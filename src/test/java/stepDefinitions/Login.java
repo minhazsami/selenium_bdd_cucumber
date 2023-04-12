@@ -5,9 +5,13 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
+import static driver.DriverFactory.getDriver;
+
 public class Login {
+    private WebDriver driver = getDriver();
     @Given("I have to access the login page")
     public void i_have_to_access_the_login_page() {
         driver.get("https://www.webdriveruniversity.com/Login-Portal/index.html?");

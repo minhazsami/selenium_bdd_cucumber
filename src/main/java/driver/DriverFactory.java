@@ -32,10 +32,10 @@ public class DriverFactory {
             }
             case "firefox" -> {
                 System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir") + "/src/main/java/driver/divers/geckodriver.exe");
-                FirefoxOptions firefixOptions = new FirefoxOptions();
-                firefixOptions.addArguments("--remote-allow-origins=*");
-                firefixOptions.setPageLoadStrategy(PageLoadStrategy.NORMAL);
-                driver = (WebDriver) new FirefoxOptions(firefixOptions);
+                FirefoxOptions firefoxOptions = new FirefoxOptions();
+                firefoxOptions.addArguments("--remote-allow-origins=*");
+                firefoxOptions.setPageLoadStrategy(PageLoadStrategy.NORMAL);
+                driver = (WebDriver) new FirefoxOptions(firefoxOptions);
                 break;
             }
         }
