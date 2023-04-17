@@ -4,6 +4,7 @@ import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 
 public class DriverFactory {
@@ -19,7 +20,7 @@ public class DriverFactory {
     private static WebDriver createDriver(){
         WebDriver driver = null;
 
-        String browserType = "chrome";
+        String browserType = "firefox";
 
         switch (browserType) {
             case "chrome" -> {
@@ -33,9 +34,9 @@ public class DriverFactory {
             case "firefox" -> {
                 System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir") + "/src/main/java/driver/divers/geckodriver.exe");
                 FirefoxOptions firefoxOptions = new FirefoxOptions();
-                firefoxOptions.addArguments("--remote-allow-origins=*");
+                //firefoxOptions.addArguments("--remote-allow-origins=*");
                 firefoxOptions.setPageLoadStrategy(PageLoadStrategy.NORMAL);
-                driver = (WebDriver) new FirefoxOptions(firefoxOptions);
+                driver = new FirefoxDriver(firefoxOptions);
                 break;
             }
         }
