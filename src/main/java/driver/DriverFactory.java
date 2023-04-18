@@ -4,6 +4,8 @@ import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 
@@ -20,7 +22,7 @@ public class DriverFactory {
     private static WebDriver createDriver(){
         WebDriver driver = null;
 
-        String browserType = "firefox";
+        String browserType = "edge";
 
         switch (browserType) {
             case "chrome" -> {
@@ -37,6 +39,14 @@ public class DriverFactory {
                 //firefoxOptions.addArguments("--remote-allow-origins=*");
                 firefoxOptions.setPageLoadStrategy(PageLoadStrategy.NORMAL);
                 driver = new FirefoxDriver(firefoxOptions);
+                break;
+            }
+            case "edge" -> {
+                System.setProperty("webdriver.edge.driver", System.getProperty("user.dir") + "/src/main/java/driver/divers/msedgedriver.exe");
+                EdgeOptions edgeOptions = new EdgeOptions();
+                edgeOptions.addArguments("--remote-allow-origins=*");
+                edgeOptions.setPageLoadStrategy(PageLoadStrategy.NORMAL);
+                driver = new EdgeDriver(edgeOptions);
                 break;
             }
         }
