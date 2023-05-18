@@ -21,7 +21,8 @@ public class Contact_Us_Steps extends Base_PO {
 
     @When("I enter a unique first name")
     public void i_enter_a_unique_first_name() {
-        driver.findElement(By.xpath("//input[@name='first_name']")).sendKeys("AutoFN" + generateRandomNUmber(5));
+        //driver.findElement(By.xpath("//input[@name='first_name']")).sendKeys("AutoFN" + generateRandomNUmber(5));
+        sendKeys(By.xpath("//input[@name='first_name']"),"AutoFN" + generateRandomNUmber(5));
     }
 
     @And("I enter a unique last name")

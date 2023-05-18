@@ -12,6 +12,7 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
+import java.util.concurrent.TimeUnit;
 
 public class DriverFactory {
     private static ThreadLocal<WebDriver> webDriver = new ThreadLocal<>();
@@ -53,6 +54,7 @@ public class DriverFactory {
             }
         }
         driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         return driver;
     }
 
