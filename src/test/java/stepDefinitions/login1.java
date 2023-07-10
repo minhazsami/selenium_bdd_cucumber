@@ -1,4 +1,4 @@
-package stepDefinitions.base;
+package stepDefinitions;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -9,8 +9,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import pageObject.Base_PO;
-
-import javax.swing.*;
 
 public class login1 extends Base_PO {
 
